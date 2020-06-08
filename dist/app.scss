@@ -1,0 +1,14 @@
+
+.if {
+  box-sizing: border-box;
+}
+
+*.if,
+*.if:before,
+*.if:after {
+  box-sizing: border-box;
+}
+
+body {
+    color: blue;
+}

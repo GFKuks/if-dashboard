@@ -1,0 +1,14 @@
+{
+    "parser": "babel-eslint",
+    "extends": ["airbnb"],
+    "env": {
+        "browser": true,
+        "node": true,
+    },
+    "rules": {
+        "indent": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-indent-props": "off",
+        "react/jsx-filename-extension": [0],
+    }
+}
