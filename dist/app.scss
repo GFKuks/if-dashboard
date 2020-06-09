@@ -1,3 +1,12 @@
+$color-grey-support: rgb(168,161,158);
+$critical-red: rgb(217, 62, 66);
+$warning-yellow: rgb(247, 194, 76);
+$secondary-text-grey: rgb(110,98,94); // Same as action text, date text, status text, vary with weight, also for most buttons
+$active-status-outline: rgb(232,224,217); // Same as action button bg (exception, just in one)
+$active-action-text: rgb(110,98,94);
+$primary-action-button: rgb(0,84,240);
+$primary-action-caret: rgb(149,182,245); // Pačeko, vai nevar ar opacity
+$icon-grey: rgb(102,102,102);
 
 .if {
   box-sizing: border-box;
@@ -11,4 +20,64 @@
 
 body {
     color: blue;
+}
+
+tr {
+    vertical-align: center !important;
+}
+
+.if.container {
+    max-width: 1080px !important;
+}
+
+.float-right {
+    float: right;
+}
+
+.date-text {
+    color: $secondary-text-grey;
+    font-size: 0.8rem !important;
+}
+
+.type-text {
+    font-weight: 700;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.05em;
+}
+
+.details-text {
+    font-weight: 500;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.05em;
+}
+
+.status {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 0.7rem !important;
+    font-weight: 900 !important;
+    line-height: 18px !important;
+    border-radius: 2px;
+    border-style: solid;
+    letter-spacing: 0.05em;
+    &.Active {
+        border-color: $active-status-outline;
+        color: $secondary-text-grey;
+    }
+    &.Unpaid {
+        border-color: $critical-red;
+        background-color: $critical-red;
+        color: white;
+    }
+    &.Ending.soon {
+        border-color: $warning-yellow;
+        background-color: $warning-yellow;
+        color: white;
+    }
+}
+
+.policy-icon {
+    max-height: 64px;
+    width: auto;
+    color: $icon-grey;
 }
