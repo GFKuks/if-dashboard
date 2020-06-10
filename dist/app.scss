@@ -22,44 +22,59 @@ body {
     color: blue;
 }
 
-tr {
-    vertical-align: center !important;
+td {
+    vertical-align: middle !important;
 }
 
 .if.container {
     max-width: 1080px !important;
 }
 
-.float-right {
-    float: right;
+.table-header {
+    margin-bottom: 0.75rem !important;
+    font-size: 1.9rem !important;
+}
+
+.icon-cell {
+    padding-left: 0 !important;
+}
+
+.if.icon {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    background-size: 3rem !important;
+    margin-right: 5rem;
 }
 
 .date-text {
     color: $secondary-text-grey;
     font-size: 0.8rem !important;
+    float: right;
 }
 
 .type-text {
-    font-weight: 700;
-    font-size: 0.8rem !important;
-    letter-spacing: 0.05em;
+    // font-weight: 900;
+    font-size: 0.875rem !important;
+    // letter-spacing: 0.05em;
 }
 
 .details-text {
-    font-weight: 500;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.05em;
+    // font-weight: 500;
+    font-size: 1rem !important;
+    // letter-spacing: 0.05em;
 }
 
 .status {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    font-size: 0.7rem !important;
-    font-weight: 900 !important;
-    line-height: 18px !important;
-    border-radius: 2px;
+    padding: 0 0.75rem !important;
+    // padding-left: 1rem !important;
+    // padding-right: 1rem !important;
+    font-size: 0.75rem !important;
+    // font-weight: 900 !important;
+    line-height: 20px !important;
+    border-width: 2px;
     border-style: solid;
-    letter-spacing: 0.05em;
+    float: right;
     &.Active {
         border-color: $active-status-outline;
         color: $secondary-text-grey;
@@ -76,8 +91,35 @@ tr {
     }
 }
 
-.policy-icon {
-    max-height: 64px;
-    width: auto;
-    color: $icon-grey;
+.caret-down {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid $secondary-text-grey;
+  margin: 7px;
+}
+
+.dropdown {
+    display: inline;
+}
+
+.action-cell {
+    padding-right: 0 !important;
+}
+
+.button-group {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.dropdown-button {
+    background-color: $active-status-outline;
+    // padding: 10px;
+}
+
+.action-button {
+    background-color: $active-status-outline;
+    font-size: 0.75rem !important;
+
 }
