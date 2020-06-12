@@ -2,9 +2,13 @@ import React from 'react';
 
 function ActionButton() {
     return (
-        <div className="button-group">
-            <button className="action-button" type="button" aria-label="Action Select">Fill a claim</button>
-            <button className="dropdown-button" type="button" aria-label="Action Dropdown"><span className="caret-down" /></button>
+        <div className="if button-group">
+            <button className="if action-button" type="button" aria-label="Action Select">
+                Fill a claim
+            </button>
+            <button className="if dropdown-button" type="button" aria-label="Action Dropdown">
+                <span className="caret-down" />
+            </button>
         </div>
     );
 }
@@ -48,7 +52,6 @@ export default function Function() {
     return (
         <div className="if">
             <h2 className="if font weight-54 table-header">Insurance policies</h2>
-            <div className="if seperator" />
             <table className="if table">
                 <tbody className="if">
                     { data.map((entry) => {

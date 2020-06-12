@@ -7,6 +7,7 @@ $active-action-text: rgb(110,98,94);
 $primary-action-button: rgb(0,84,240);
 $primary-action-caret: rgb(149,182,245); // Pačeko, vai nevar ar opacity
 $icon-grey: rgb(102,102,102);
+$secondary-light-beige: rgb(246,243,240);
 
 .if {
   box-sizing: border-box;
@@ -97,11 +98,8 @@ td {
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid $secondary-text-grey;
-  margin: 7px;
-}
-
-.dropdown {
-    display: inline;
+  margin-top: 1rem !important;
+  // margin: 7px;
 }
 
 .action-cell {
@@ -115,11 +113,23 @@ td {
 
 .dropdown-button {
     background-color: $active-status-outline;
-    // padding: 10px;
+    padding: 0rem 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 0px;
+    width: 2.5rem;
+    border-color: $secondary-light-beige;
 }
 
 .action-button {
     background-color: $active-status-outline;
-    font-size: 0.75rem !important;
-
+    font-size: 0.8rem !important;
+    font-weight: 600;
+    color: $secondary-text-grey !important;
+    width: 7.5rem;
+    height: 2.5rem;
+    padding: 0.25rem 0rem;
+    border-style: solid;
+    border-width: 0.003rem;
+    border-color: $secondary-light-beige;
 }
