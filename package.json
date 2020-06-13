@@ -39,11 +39,13 @@
 		"webpack-dev-server": "^3.11.0"
 	},
 	"dependencies": {
+		"moment": "^2.26.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1"
 	},
-	"vendorCopy": [{
+	"vendorCopy": [
+		{
 			"from": "node_modules/@guybrush/bundle/dist/fonts",
 			"to": "public/styles/fonts"
 		},

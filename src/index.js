@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Content from './Content/Content';
+import Main from './Main/Main';
 
 const title = 'React with Webpack and Babel';
 
 ReactDOM.render(
-  <Content title={title} />,
-  document.getElementById('content'),
+  <Main title={title} />,
+  document.getElementById('main'),
 );
 
 module.hot.accept();

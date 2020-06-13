@@ -7,7 +7,10 @@ $active-action-text: rgb(110,98,94);
 $primary-action-button: rgb(0,84,240);
 $primary-action-caret: rgb(149,182,245); // Pačeko, vai nevar ar opacity
 $icon-grey: rgb(102,102,102);
-$secondary-light-beige: rgb(246,243,240);
+$secondary-lighter-beige: rgb(246,243,240);
+$secondary-light-beige: rgb(241, 236, 232);
+$separator-grey: rgb(226,221,217);
+$primary-blue: rgb(0, 84, 240);
 
 .if {
   box-sizing: border-box;
@@ -17,6 +20,12 @@ $secondary-light-beige: rgb(246,243,240);
 *.if:before,
 *.if:after {
   box-sizing: border-box;
+}
+
+.if.table {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $separator-grey;
 }
 
 body {
@@ -34,6 +43,10 @@ td {
 .table-header {
     margin-bottom: 0.75rem !important;
     font-size: 1.9rem !important;
+}
+
+.section-header {
+    font-size: 1.4rem !important;
 }
 
 .icon-cell {
@@ -55,51 +68,34 @@ td {
 }
 
 .type-text {
-    // font-weight: 900;
     font-size: 0.875rem !important;
-    // letter-spacing: 0.05em;
 }
 
 .details-text {
-    // font-weight: 500;
     font-size: 1rem !important;
-    // letter-spacing: 0.05em;
 }
 
 .status {
     padding: 0 0.75rem !important;
-    // padding-left: 1rem !important;
-    // padding-right: 1rem !important;
     font-size: 0.75rem !important;
-    // font-weight: 900 !important;
     line-height: 20px !important;
     border-width: 2px;
     border-style: solid;
     float: right;
-    &.Active {
+    &.active {
         border-color: $active-status-outline;
         color: $secondary-text-grey;
     }
-    &.Unpaid {
+    &.unpaid {
         border-color: $critical-red;
         background-color: $critical-red;
         color: white;
     }
-    &.Ending.soon {
+    &.ending {
         border-color: $warning-yellow;
         background-color: $warning-yellow;
         color: white;
     }
-}
-
-.caret-down {
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid $secondary-text-grey;
-  margin-top: 1rem !important;
-  // margin: 7px;
 }
 
 .action-cell {
@@ -108,28 +104,64 @@ td {
 
 .button-group {
     display: inline-flex;
-    vertical-align: middle;
+    width: 100%;
+
+    .dropdown-button {
+        background-color: $active-status-outline;
+        border-style: solid;
+        border-width: 1px 1px 1px 0px;
+        border-color: $secondary-lighter-beige;
+        width: 2.5rem;
+        &:hover {
+            cursor: pointer;
+            .caret-down {
+                opacity: 50%;
+            }
+        }
+    }
+
+    .action-button {
+        background-color: $active-status-outline;
+        font-size: 0.8rem !important;
+        font-weight: 600;
+        width: 7.5rem;
+        height: 2.5rem;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $secondary-lighter-beige;
+        .action-text {
+            color: $secondary-text-grey;
+        }
+        &:hover {
+            cursor: pointer;
+            .action-text {
+                opacity: 50%;
+            }
+        }
+    }
+
+    .caret-down {
+        display: inline-block;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid;
+        border-top-color: $secondary-text-grey;
+    }
+
+    &.active-pay {
+        .dropdown-button {
+            background-color: $primary-blue;
+        }
+        .action-button {
+            color: white !important;
+            background-color: $primary-blue;
+        }
+        .caret-down {
+            border-top-color: white;
+        }
+    }
 }
 
-.dropdown-button {
-    background-color: $active-status-outline;
-    padding: 0rem 0.25rem;
-    border-style: solid;
-    border-width: 1px;
-    border-left-width: 0px;
-    width: 2.5rem;
-    border-color: $secondary-light-beige;
-}
-
-.action-button {
-    background-color: $active-status-outline;
-    font-size: 0.8rem !important;
-    font-weight: 600;
-    color: $secondary-text-grey !important;
-    width: 7.5rem;
-    height: 2.5rem;
-    padding: 0.25rem 0rem;
-    border-style: solid;
-    border-width: 0.003rem;
-    border-color: $secondary-light-beige;
+.detail-row {
+    background-color: $secondary-light-beige !important;
 }

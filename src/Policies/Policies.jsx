@@ -1,92 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-function ActionButton() {
-    return (
-        <div className="if button-group">
-            <button className="if action-button" type="button" aria-label="Action Select">
-                Fill a claim
-            </button>
-            <button className="if dropdown-button" type="button" aria-label="Action Dropdown">
-                <span className="caret-down" />
-            </button>
-        </div>
-    );
-}
+import TableBody from './Comps/TableBody';
 
-export default function Function() {
-    const data = [
+const Header = ({ title }) => (
+    <h2 className="if font weight-54 table-header">{title}</h2>
+);
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
+};
+
+export default function Policies() {
+    const title = 'Insurance policies';
+    const [data, setData] = useState([
         {
             id: 0,
-            type: 'Travel',
+            type: { icon: 'plane', text: 'Travel' },
             details: 'Europe, 1 person',
-            date: 'Apr 20, 2019 - Apr 21, 2020',
-            status: 'Active',
-            action: 'Fill a claim',
+            fromDate: '2019-04-20',
+            toDate: '2020-04-21',
+            status: { key: 'active', text: 'Active' },
+            actions: [
+                { key: 'edit', text: 'Edit details' },
+                { key: 'claim', text: 'Fill a claim' },
+            ],
         },
         {
             id: 1,
-            type: 'Private property',
+            type: { icon: 'home', text: 'Private property' },
             details: 'Zigfrīda Annas Meireovica bulvāris 10-8, Rīga',
-            date: 'Jan 6, 2019 - Jan 6, 2020',
-            status: 'Unpaid',
-            action: 'Fill a claim',
+            fromDate: '2019-01-06',
+            toDate: '2020-01-06',
+            status: { key: 'unpaid', text: 'Unpaid' },
+            actions: [
+                { key: 'edit', text: 'Edit details' },
+                { key: 'pay', text: 'Pay 24.47€' },
+            ],
         },
         {
             id: 2,
-            type: 'KASKO',
+            type: { icon: 'car', text: 'KASKO' },
             details: 'Volvo XS60, FF-4224',
-            date: 'Mai 12, 20118 - Mai 12, 2019',
-            status: 'Ending soon',
-            action: 'Renew',
+            fromDate: '2018-05-12',
+            toDate: '2019-05-12',
+            status: { key: 'ending', text: 'Ending soon' },
+            actions: [
+                { key: 'edit', text: 'Edit details' },
+                { key: 'renew', text: 'Renew' },
+            ],
         },
         {
             id: 3,
-            type: 'PET',
+            type: { icon: 'paw', text: 'PET' },
             details: 'Muris',
-            date: 'Mai 12, 2019 - Mai 12, 2019',
-            status: 'Active',
-            action: 'Fill a claim',
+            fromDate: '2019-05-12',
+            toDate: '2019-05-12',
+            status: { key: 'active', text: 'Active' },
+            actions: [
+                { key: 'edit', text: 'Edit details' },
+                { key: 'claim', text: 'Fill a claim' },
+            ],
         },
-    ];
-
+    ]);
     return (
-        <div className="if">
-            <h2 className="if font weight-54 table-header">Insurance policies</h2>
+        <div className="if panels">
+            <Header title={title} />
             <table className="if table">
-                <tbody className="if">
-                    { data.map((entry) => {
-                        let icon;
-                        if (entry.type === 'Travel') {
-                            icon = 'plane';
-                        } else if (entry.type === 'Private property') {
-                            icon = 'home';
-                        } else if (entry.type === 'KASKO') {
-                            icon = 'car';
-                        } else if (entry.type === 'PET') {
-                            icon = 'paw';
-                        }
-                        return (
-                            <tr key={entry.id} className="if">
-                                <td className="if col-1--sm icon-cell">
-                                    <i className={`if icon product ${icon} brown`} alt="Policy Icon" aria-hidden="true" />
-                                </td>
-                                <td className="if col-4--sm">
-                                    <div className="if font weight-126 type-text">{entry.type}</div>
-                                    <div className="if font weight-70 details-text">{entry.details}</div>
-                                </td>
-                                <td className="if col-3--sm">
-                                    <div className="if font weight-70 date-text">{entry.date}</div>
-                                </td>
-                                <td className="if col-2--sm">
-                                    <div className={`if font weight-126 status ${entry.status}`}>{entry.status}</div>
-                                </td>
-                                <td className="if col-2--sm action-cell">
-                                    <ActionButton />
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
+                <TableBody data={data} setData={setData} />
             </table>
         </div>
     );
