@@ -30,7 +30,7 @@ export default function DetailRow({
 
     function handleCancel() {
         setProperties(oldProperties);
-        toggleSection('');
+        toggleSection(-1);
     }
 
     function saveChanges() {
@@ -46,7 +46,7 @@ export default function DetailRow({
             };
         });
         setData(newData);
-        toggleSection('');
+        toggleSection(-1);
     }
 
     if (showSection !== id) {
@@ -62,10 +62,10 @@ export default function DetailRow({
                 </div>
                 <form autoComplete="off" className="if container">
                     <div className="if form-group">
-                        <input
-                            data-size="largest"
+                        <textarea
+                            data-size="large"
                             type="text"
-                            className="if input-field"
+                            className="if textarea full"
                             id="details"
                             placeholder="Details"
                             value={details}
@@ -180,6 +180,6 @@ DetailRow.propTypes = {
         }).isRequired,
     ).isRequired,
     setData: PropTypes.func.isRequired,
-    showSection: PropTypes.string.isRequired,
+    showSection: PropTypes.number.isRequired,
     toggleSection: PropTypes.func.isRequired,
 };

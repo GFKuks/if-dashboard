@@ -1,33 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import PolicyRow from './PolicyRow';
 import DetailRow from './DetailRow';
 
 export default function TableBody({ data, setData }) {
-    const dataAndDetails = [];
-    const [showSection, toggleSection] = useState('');
-    data.forEach((entry) => {
-        dataAndDetails.push(
-            <PolicyRow
-                entry={entry}
-                showSection={showSection}
-                toggleSection={toggleSection}
-            />,
-        );
-        dataAndDetails.push(
-            <DetailRow
-                entry={entry}
-                data={data}
-                setData={setData}
-                showSection={showSection}
-                toggleSection={toggleSection}
-            />,
-        );
-    });
+    const [showSection, toggleSection] = useState(-1);
     return (
         <tbody className="if">
-            {dataAndDetails}
+            {data.map((entry) => (
+                <Fragment key={`${entry.id}-frag`}>
+                    <PolicyRow
+                        entry={entry}
+                        showSection={showSection}
+                        toggleSection={toggleSection}
+                    />
+                    <DetailRow
+                        entry={entry}
+                        data={data}
+                        setData={setData}
+                        showSection={showSection}
+                        toggleSection={toggleSection}
+                    />
+                </Fragment>
+            ))}
         </tbody>
     );
 }
