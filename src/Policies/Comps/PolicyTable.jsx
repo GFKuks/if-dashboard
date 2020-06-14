@@ -4,32 +4,35 @@ import PropTypes from 'prop-types';
 import PolicyRow from './PolicyRow';
 import DetailRow from './DetailRow';
 
-export default function TableBody({ data, setData }) {
+export default function PolicyTable({ data, setData }) {
     const [showSection, toggleSection] = useState(-1);
     return (
-        <tbody className="if">
-            {data.map((entry) => (
-                <Fragment key={`${entry.id}-frag`}>
-                    <PolicyRow
-                        entry={entry}
-                        showSection={showSection}
-                        toggleSection={toggleSection}
-                    />
-                    <DetailRow
-                        entry={entry}
-                        data={data}
-                        setData={setData}
-                        showSection={showSection}
-                        toggleSection={toggleSection}
-                    />
-                </Fragment>
-            ))}
-        </tbody>
+        <table className="if table">
+            <tbody className="if">
+                {/* Each entry has a hidden, expandable detail row */}
+                {data.map((entry) => (
+                    <Fragment key={`${entry.id}-frag`}>
+                        <PolicyRow
+                            entry={entry}
+                            showSection={showSection}
+                            toggleSection={toggleSection}
+                        />
+                        <DetailRow
+                            entry={entry}
+                            data={data}
+                            setData={setData}
+                            showSection={showSection}
+                            toggleSection={toggleSection}
+                        />
+                    </Fragment>
+                ))}
+            </tbody>
+        </table>
     );
 }
 
 
-TableBody.propTypes = {
+PolicyTable.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,

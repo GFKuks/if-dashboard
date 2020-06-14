@@ -40,7 +40,7 @@ const policyData = [
         type: { icon: 'paw', text: 'PET' },
         details: 'Muris',
         fromDate: '2019-05-12',
-        toDate: '2019-05-12',
+        toDate: '2019-05-13',
         status: { key: 'active', text: 'Active' },
         actions: [
             { key: 'edit', text: 'Edit details' },

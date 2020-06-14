@@ -13,6 +13,7 @@ export default function ActionButton({ id, actions, toggleSection }) {
             >
                 <span className="action-text">{primaryAction.text}</span>
             </button>
+            {/* Other action dropdown to be added later */}
             <button
                 className="if dropdown-button"
                 type="button"

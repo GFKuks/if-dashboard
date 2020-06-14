@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import policyData from './data/policyData';
-import TableBody from './Comps/TableBody';
+import PolicyTable from './Comps/PolicyTable';
 
 const TITLE = 'Insurance policies';
 
@@ -14,9 +14,7 @@ export default function Policies() {
     return (
         <div className="if panels">
             <Header />
-            <table className="if table">
-                <TableBody data={data} setData={setData} />
-            </table>
+            <PolicyTable data={data} setData={setData} />
         </div>
     );
 }
