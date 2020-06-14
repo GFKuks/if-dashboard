@@ -1,16 +1,13 @@
-$color-grey-support: rgb(168,161,158);
-$critical-red: rgb(217, 62, 66);
-$warning-yellow: rgb(247, 194, 76);
-$secondary-text-grey: rgb(110,98,94); // Same as action text, date text, status text, vary with weight, also for most buttons
-$active-status-outline: rgb(232,224,217); // Same as action button bg (exception, just in one)
-$active-action-text: rgb(110,98,94);
-$primary-action-button: rgb(0,84,240);
-$primary-action-caret: rgb(149,182,245); // Pačeko, vai nevar ar opacity
-$icon-grey: rgb(102,102,102);
 $secondary-lighter-beige: rgb(246,243,240);
 $secondary-light-beige: rgb(241, 236, 232);
-$separator-grey: rgb(226,221,217);
 $primary-blue: rgb(0, 84, 240);
+$critical-red: rgb(217, 62, 66);
+$warning-yellow: rgb(247, 194, 76);
+$separator-grey: rgb(226,221,217);
+$secondary-text-grey: rgb(110,98,94);
+$active-status-outline: rgb(232,224,217);
+
+// Universal If css
 
 .if {
   box-sizing: border-box;
@@ -22,22 +19,16 @@ $primary-blue: rgb(0, 84, 240);
   box-sizing: border-box;
 }
 
+// Table
+
 .if.table {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: $separator-grey;
 }
 
-body {
-    color: blue;
-}
-
 td {
     vertical-align: middle !important;
-}
-
-.if.container {
-    max-width: 1080px !important;
 }
 
 .table-header {
@@ -45,9 +36,7 @@ td {
     font-size: 1.9rem !important;
 }
 
-.section-header {
-    font-size: 1.4rem !important;
-}
+// Cells
 
 .icon-cell {
     padding-left: 0 !important;
@@ -60,11 +49,15 @@ td {
     background-size: 3rem !important;
 }
 
+// Date cell
+
 .date-text {
     color: $secondary-text-grey;
     font-size: 0.8rem !important;
     float: right;
 }
+
+// Details cell
 
 .type-text {
     font-size: 0.875rem !important;
@@ -73,6 +66,8 @@ td {
 .details-text {
     font-size: 1rem !important;
 }
+
+// Status cell
 
 .status {
     padding: 0 0.75rem !important;
@@ -96,6 +91,8 @@ td {
         color: white;
     }
 }
+
+// Action cell
 
 .action-cell {
     padding-right: 0 !important;
@@ -161,12 +158,13 @@ td {
     }
 }
 
+// Edit details section
+
 .detail-row {
     background-color: $secondary-light-beige !important;
 }
 
 .detail-section {
-    // max-width: 75%;
     width: auto;
     margin: auto;
     .detail-section-footer {
@@ -182,60 +180,35 @@ td {
     }
 }
 
+.if.form-group {
+    margin: auto 0rem !important;
+}
+
+// Responsive css
+
 @media
 only screen and (max-width: 720px)  {
     td {
         display: inline-block;
 	}
-    .icon-cell, .info-cell {
-        // display: table-cell;
-        // width: auto !important;
-        // margin: 0px !important;
-    }
-    // .date-cell, .status-cell, .action-cell {
-	// 	display: ;
-    // }
-    .detail-row {
-        width: 100%;
-    }
     .icon-cell {
         max-width: 20% !important;
         width: auto;
         padding-left: 1.25rem !important;
     }
     .info-cell {
-        width: 75% !important;
+        width: 80% !important;
     }
-    .date-cell {
-        width: 50% !important;
-    }
-    .status-cell {
+    .date-cell, .status-cell {
         width: 50% !important;
     }
     .icon-cell, .info-cell, .date-cell, .status-cell {
         border-bottom: 0px !important;
-        // display: inline-flex;
     }
     .date-text {
         float: left;
     }
-    // .if.icon {
-    //     display: inline-flex;
-    // }
-    // .info-cell {
-    //     &i {
-    //         margin: 0 !important;
-    //     }
-    // }
-    // .input-field.date {
-    //     margin: 0px;
-    // }
-    .button-group {
-        // width: 20%;
-        margin: auto !important;
+    .detail-row {
+        width: 100%;
     }
-}
-
-.if.form-group {
-    margin: auto 0rem !important;
 }
