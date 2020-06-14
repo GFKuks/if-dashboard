@@ -29,6 +29,7 @@ module.exports = [
         ],
         // Serve application to browser from /dist
         devServer: {
+            port: 3000,
             contentBase: './dist',
             hot: true,
         },

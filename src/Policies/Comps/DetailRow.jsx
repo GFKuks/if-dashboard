@@ -109,9 +109,9 @@ export default function DetailRow({
         <tr key={`${id}-details`} className="if">
             <td colSpan="5" className="if detail-row">
                 <div className="if detail-section">
-                    <i className={`if icon product ${entry.type.icon} brown`} alt="Policy Icon" aria-hidden="true" />
-                    <div>
-                        <h3 className="if font weight-54 detail-section-header">{entry.type.text}</h3>
+                    <div className="if detail-section-header">
+                        <i className={`if icon product ${entry.type.icon} brown`} alt="Policy Icon" aria-hidden="true" />
+                        <h3 className="if font weight-54">{entry.type.text}</h3>
                     </div>
                     <form autoComplete="off" className="if" onSubmit={(event) => validateChanges(event)}>
                         <div className="if form-group col-6--lg">

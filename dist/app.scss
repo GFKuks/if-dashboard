@@ -54,6 +54,7 @@ td {
 .date-text {
     color: $secondary-text-grey;
     font-size: 0.8rem !important;
+    white-space: nowrap;
     float: right;
 }
 
@@ -175,8 +176,13 @@ td {
         border-top-color: $separator-grey;
     }
     .detail-section-header {
-        font-size: 1.4rem !important;
+        display: inline-flex;
         margin-bottom: 0rem;
+        >h3{
+            margin: auto 1rem;
+            font-size: 1.4rem !important;
+            font-weight: 600 !important;
+        }
     }
 }
 
