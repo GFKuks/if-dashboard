@@ -8,9 +8,9 @@
 		"test": "jest"
 	},
 	"jest": {
-	  "verbose": true,
-      "setupFilesAfterEnv": ["<rootDir>/tests/setupTests.js"]
-  },
+	    "verbose": true,
+        "setupFilesAfterEnv": ["<rootDir>/tests/setupTests.js"]
+    },
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
